@@ -12,7 +12,7 @@ const saveData = (newdata) => {
       }
 
       console.log('Connected to MongoDB');
-      const db = client.db('WeatherApp');
+      const db = client.db('weather_app');
 
       db.collection('WeatherCollection').insertOne(newdata, (err, result) => {
          if (err) {
@@ -35,7 +35,7 @@ const getAllData = () => {
       }
 
       console.log('Connected to MongoDB');
-      const db = client.db('WeatherApp');
+      const db = client.db('weather_app');
 
       db.collection('WeatherCollection').find().toArray().then( (docs) => {
         resolve(docs);
@@ -56,7 +56,7 @@ const deleteAll = () => {
       }
 
       console.log('Connected to MongoDB');
-      const db = client.db('WeatherApp');
+      const db = client.db('weather_app');
 
       db.collection('WeatherCollection').remove({}).then( (result) => {
         resolve(result);
